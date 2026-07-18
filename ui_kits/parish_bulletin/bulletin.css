@@ -115,11 +115,11 @@ body {
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 0.3in;
-  padding-bottom: 0.12in;
+  padding-bottom: 0;
 }
 .masthead__lockup img {
   display: block;
-  height: 0.7in;
+  height: 0.9in;
   width: auto;
 }
 .masthead__date {
@@ -146,7 +146,7 @@ body {
 .masthead-rule {
   height: 2pt;
   background: var(--liturgical-accent);
-  margin: 0.04in 0 0.18in;
+  margin: 0.03in 0 0.10in;
 }
 
 /* ----- Hero ----- */
@@ -499,6 +499,25 @@ body {
   text-transform: uppercase;
   text-align: center;
   padding: 0.1in;
+}
+.feature__saint-figure { position: relative; }
+.feature__saint-figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.feature__saint-figure[data-has-image] { padding: 0; }
+.feature__credit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: var(--font-sans);
+  font-size: 5pt;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: #555;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.5pt 2pt;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .feature__saint-meta {
   font-family: var(--font-sans);
