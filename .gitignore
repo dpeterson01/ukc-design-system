@@ -1,0 +1,7 @@
+# Dependencies / build cruft
+node_modules/
+**/node_modules/
+
+# OS / editor
+.DS_Store
+*.log
