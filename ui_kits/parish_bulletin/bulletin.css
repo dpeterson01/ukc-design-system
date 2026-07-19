@@ -1192,14 +1192,15 @@ body {
    wide-by-nature activities (pledge, wordsearch, fillblank) get
    tightened so they still fit. */
 .encounter-pair[data-layout="side-by-side"] .kids-corner__variant[data-variant="pledge"] .kids-pledge__line:nth-child(n+5) { display: none; }
-.encounter-pair[data-layout="side-by-side"] .kids-dots { max-height: 2.0in; width: auto; }
-.encounter-pair[data-layout="side-by-side"] .kids-wordsearch__grid { font-size: 9pt; line-height: 1.18; }
+.encounter-pair[data-layout="side-by-side"] .kids-dots { max-height: 100%; width: 100%; }
+.encounter-pair[data-layout="side-by-side"] .kids-wordsearch__grid { font-size: 11pt; line-height: 1.42; }
 
 /* STACKED kids variant tuning: pledge/wordsearch/fillblank get
    their full glory back, but the square ones (dots, draw) compress
    into the shorter band. */
 .encounter-pair[data-layout="stacked"] .kids-corner__variant[data-variant="pledge"] .kids-pledge__line:nth-child(n+4) { display: none; }
 .encounter-pair[data-layout="stacked"] .kids-dots { max-height: 1.1in; width: auto; }
+.encounter-pair[data-layout="stacked"] .kids-maze { max-height: 1.1in; }
 .encounter-pair[data-layout="stacked"] .kids-corner__variant[data-variant="short-story"] .kids-story p:nth-of-type(2) { display: none; }
 .encounter-pair[data-layout="stacked"] .kids-story p { font-size: 9.5pt; line-height: 1.32; margin-bottom: 0.03in; }
 .encounter-pair[data-layout="stacked"] .kids-wordsearch__grid { font-size: 8.5pt; line-height: 1.18; letter-spacing: 0.12em; }
@@ -1322,7 +1323,8 @@ body {
   min-height: 0;
 }
 .kids-dots__frame svg {
-  max-width: 1.4in;
+  width: 100%;
+  max-width: 100%;
   max-height: 100%;
 }
 .kids-dots circle {
@@ -1345,7 +1347,7 @@ body {
   justify-content: center;
   padding: 0.08in;
 }
-.kids-maze { max-width: 1.7in; max-height: 100%; }
+.kids-maze { width: 100%; height: 100%; max-height: 100%; }
 .kids-maze line { stroke: var(--color-navy); stroke-width: 1.6; stroke-linecap: round; }
 .kids-maze__pt { fill: var(--liturgical-accent); }
 
