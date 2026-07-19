@@ -1256,6 +1256,7 @@ body {
 .kids-corner[data-active-variant="fillblank"]   .kids-corner__variant[data-variant="fillblank"],
 .kids-corner[data-active-variant="draw"]        .kids-corner__variant[data-variant="draw"],
 .kids-corner[data-active-variant="connect-dots"] .kids-corner__variant[data-variant="connect-dots"],
+.kids-corner[data-active-variant="maze"]        .kids-corner__variant[data-variant="maze"],
 .kids-corner[data-active-variant="short-story"] .kids-corner__variant[data-variant="short-story"] {
   display: flex;
   flex-direction: column;
@@ -1335,6 +1336,18 @@ body {
   text-anchor: middle;
   dominant-baseline: middle;
 }
+.kids-maze__frame {
+  flex: 1 1 auto;
+  background: var(--color-warm-white);
+  border: 1pt solid var(--color-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.08in;
+}
+.kids-maze { max-width: 1.7in; max-height: 100%; }
+.kids-maze line { stroke: var(--color-navy); stroke-width: 1.6; stroke-linecap: round; }
+.kids-maze__pt { fill: var(--liturgical-accent); }
 
 /* Short-story variant */
 .kids-story {
