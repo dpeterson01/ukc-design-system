@@ -42,9 +42,15 @@
       <polygon id="lockup-cross" points="1057.42 697.27 914.2 697.27 914.2 554.05 867.58 554.05 867.58 697.27 724.36 697.27 724.36 743.89 867.58 743.89 867.58 1053.63 914.2 1053.63 914.2 743.89 1057.42 743.89 1057.42 697.27" fill="#fff"/>
     </g>
     <g id="text-block">
-      <text transform="translate(334.8008 1657.0475)" fill="#fff" font-family="CormorantSC-Regular, &apos;Cormorant SC&apos;" font-size="65"><tspan x="0" y="0" letter-spacing=".06em">S</tspan><tspan x="35.81" y="0" letter-spacing="0em">T</tspan><tspan x="76.37" y="0" letter-spacing=".06em">. JOHN THE BAPTIST · CLE ELUM</tspan></text>
-      <text transform="translate(881.126 1780.2028)" fill="#fff" font-family="CormorantSC-Regular, &apos;Cormorant SC&apos;" font-size="125" letter-spacing=".06em"><tspan x="0" y="0">◆</tspan></text>
-      <text transform="translate(278.1853 1871.5888)" fill="#fff" font-family="CormorantSC-Regular, &apos;Cormorant SC&apos;" font-size="65"><tspan x="0" y="0" letter-spacing=".06em">IMM</tspan><tspan x="141.83" y="0" letter-spacing=".05em">A</tspan><tspan x="190.58" y="0" letter-spacing=".06em">CUL</tspan><tspan x="325.78" y="0" letter-spacing="0em">A</tspan><tspan x="370.76" y="0" letter-spacing=".06em">TE CONCEPTION · </tspan><tspan x="981.75" y="0" letter-spacing=".01em">R</tspan><tspan x="1026.34" y="0" letter-spacing=".06em">OS</tspan><tspan x="1115.84" y="0" letter-spacing=".04em">L</tspan><tspan x="1152.89" y="0" letter-spacing=".06em">YN</tspan></text>
+      <g>
+        <text transform="translate(717.9765 1925.0226)" fill="#fff" font-family="CormorantSC-Regular, &apos;Cormorant SC&apos;" font-size="75"><tspan x="0" y="0" letter-spacing=".18em">R</tspan><tspan x="63.82" y="0" letter-spacing=".23em">OS</tspan><tspan x="191.85" y="0" letter-spacing=".2em">L</tspan><tspan x="246.97" y="0" letter-spacing=".23em">YN</tspan></text>
+        <text transform="translate(190.0587 1823.1102)" fill="#fff" font-family="CormorantSC-Regular, &apos;Cormorant SC&apos;" font-size="100"><tspan x="0" y="0" letter-spacing=".06em">IMM</tspan><tspan x="218.2" y="0" letter-spacing=".05em">A</tspan><tspan x="293.2" y="0" letter-spacing=".06em">CUL</tspan><tspan x="501.19" y="0" letter-spacing="0em">A</tspan><tspan x="570.4" y="0" letter-spacing=".06em">TE CONCEPTION</tspan></text>
+      </g>
+      <text transform="translate(864.5154 1712.0712) scale(1.0298 1)" fill="#fff" font-family="CormorantSC-Regular, &apos;Cormorant SC&apos;" font-size="228.21" letter-spacing=".06em"><tspan x="0" y="0">◆</tspan></text>
+      <g>
+        <text transform="translate(662.778 1539.5867)" fill="#fff" font-family="CormorantSC-Regular, &apos;Cormorant SC&apos;" font-size="75" letter-spacing=".25em"><tspan x="0" y="0">CLE ELUM</tspan></text>
+        <text transform="translate(325.5081 1438.9445)" fill="#fff" font-family="CormorantSC-Regular, &apos;Cormorant SC&apos;" font-size="100"><tspan x="0" y="0" letter-spacing=".06em">S</tspan><tspan x="55.1" y="0" letter-spacing="0em">T</tspan><tspan x="117.5" y="0" letter-spacing=".06em">. JOHN THE BAPTIST</tspan></text>
+      </g>
     </g>
   </g>
 </svg>
