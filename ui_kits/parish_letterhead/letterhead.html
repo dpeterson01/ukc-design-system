@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+  Parish Letterhead · St. John the Baptist & Immaculate Conception
+  Diocese of Yakima, WA · ukccatholic.org
+  -----------------------------------------------------------------------
+  HOW TO USE
+  • Open in Chrome or Edge.
+  • Click any grey-dashed field and type your content.
+  • File → Print → Destination: Save as PDF → Save.
+  • For agent-generated letters, set contenteditable fields via script
+    or replace the placeholder text before rendering to PDF.
+
+  FIELDS
+    #field-date         — letter date
+    #field-recipient    — recipient name + address block (multi-line)
+    #field-salutation   — "Dear [Name],"
+    #field-body         — body paragraphs (add <p> tags as needed)
+    #field-closing      — closing phrase ("Sincerely," etc.)
+    #field-sig-name     — sender's name
+    #field-sig-title    — sender's title
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parish Letterhead · St. John the Baptist &amp; Immaculate Conception</title>
+  <link rel="stylesheet" href="letterhead.css">
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ========== HEADER ========== -->
+  <header class="lh-header">
+    <img
+      class="lh-logo"
+      src="../../assets/logos/parish-fullcolor_primary-lockup.svg"
+      alt="St. John the Baptist &amp; Immaculate Conception · Catholic Parishes of Upper Kittitas County"
+    >
+  </header>
+
+  <hr class="lh-rule" aria-hidden="true">
+
+  <!-- ========== BODY ========== -->
+  <main class="lh-body">
+
+    <!-- Date -->
+    <p class="lh-date">
+      <span
+        id="field-date"
+        contenteditable="true"
+        aria-label="Date"
+      >July 27, 2026</span>
+    </p>
+
+    <!-- Recipient block -->
+    <div class="lh-recipient">
+      <div
+        id="field-recipient"
+        contenteditable="true"
+        aria-label="Recipient name and address"
+        style="white-space: pre-line; outline: none;"
+      ><span class="lh-hint">Recipient Name
+Organization
+Address Line 1
+City, State ZIP</span></div>
+    </div>
+
+    <!-- Salutation -->
+    <p class="lh-salutation">
+      <span
+        id="field-salutation"
+        contenteditable="true"
+        aria-label="Salutation"
+      ><span class="lh-hint">Dear [Name],</span></span>
+    </p>
+
+    <!-- Body -->
+    <div id="field-body" contenteditable="true" aria-label="Letter body">
+      <p class="lh-body-text">
+        <span class="lh-hint">Type the body of your letter here. Add additional paragraphs as needed.</span>
+      </p>
+    </div>
+
+    <!-- Closing -->
+    <p class="lh-closing">
+      <span
+        id="field-closing"
+        contenteditable="true"
+        aria-label="Closing"
+      >Sincerely,</span>
+    </p>
+
+    <!-- Signature block -->
+    <p class="lh-signature-name">
+      <span
+        id="field-sig-name"
+        contenteditable="true"
+        aria-label="Sender name"
+      ><span class="lh-hint">Your Name</span></span>
+    </p>
+    <p class="lh-signature-title">
+      <span
+        id="field-sig-title"
+        contenteditable="true"
+        aria-label="Sender title"
+      ><span class="lh-hint">Your Title</span></span>
+    </p>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="lh-footer">
+    <hr class="lh-footer-rule" aria-hidden="true">
+    <p class="lh-footer-contact">
+      303 W. 2nd Street &middot; Cle Elum, WA 98922 &middot; (509) 674-2531 &middot; parish@ukccatholic.org &middot; ukccatholic.org
+    </p>
+    <p class="lh-footer-tagline">Two places. One faith. One future in Christ.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

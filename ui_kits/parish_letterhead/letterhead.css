@@ -1,0 +1,193 @@
+/* =============================================================
+   Parish Letterhead · 8.5×11 template
+   Print-ready via Chrome/Edge → PDF.
+
+   Usage:
+     Open letterhead.html in a browser.
+     Fill in the editable fields (contenteditable regions).
+     File → Print → Save as PDF.
+   ============================================================= */
+
+/* Brand fonts — self-hosted so template renders offline */
+@font-face { font-family: "Cormorant SC"; src: url("../../fonts/CormorantSC-Regular.ttf") format("truetype");  font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant SC"; src: url("../../fonts/CormorantSC-Medium.ttf") format("truetype");   font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant SC"; src: url("../../fonts/CormorantSC-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant SC"; src: url("../../fonts/CormorantSC-Bold.ttf") format("truetype");     font-weight: 700; font-style: normal; font-display: swap; }
+
+@font-face { font-family: "Source Sans 3"; src: url("../../fonts/SourceSans3-Regular.ttf") format("truetype");  font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("../../fonts/SourceSans3-Italic.ttf") format("truetype");   font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("../../fonts/SourceSans3-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("../../fonts/SourceSans3-Bold.ttf") format("truetype");     font-weight: 700; font-style: normal; font-display: swap; }
+
+@font-face { font-family: "Source Serif 4"; src: url("../../fonts/SourceSerif4-Regular.ttf") format("truetype");        font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Source Serif 4"; src: url("../../fonts/SourceSerif4-Italic.ttf") format("truetype");         font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Source Serif 4"; src: url("../../fonts/SourceSerif4-SemiBold.ttf") format("truetype");       font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Source Serif 4"; src: url("../../fonts/SourceSerif4-SemiBoldItalic.ttf") format("truetype"); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Source Serif 4"; src: url("../../fonts/SourceSerif4-Bold.ttf") format("truetype");           font-weight: 700; font-style: normal; font-display: swap; }
+
+/* ----- Print setup ----- */
+@page {
+  size: 8.5in 11in;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-navy:      #2E5E8A;
+  --color-navy-deep: #1A3A52;
+  --color-gold:      #B8945F;
+  --color-charcoal:  #333333;
+  --color-mid-gray:  #666666;
+  --color-light-gray:#999999;
+
+  --font-serif:  "Source Serif 4", Georgia, serif;
+  --font-sans:   "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --font-display:"Cormorant SC", Georgia, serif;
+
+  /* Margins */
+  --margin-side: 1in;
+  --margin-top:  0.75in;
+  --margin-bottom: 0.625in;
+}
+
+html, body {
+  background: #e8e8e8;
+  font-family: var(--font-serif);
+  color: var(--color-charcoal);
+}
+
+/* ---- Sheet (single page) ---- */
+.sheet {
+  width: 8.5in;
+  min-height: 11in;
+  background: #fff;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ---- Header ---- */
+.lh-header {
+  padding: var(--margin-top) var(--margin-side) 0.2in;
+  text-align: center;
+}
+
+.lh-logo {
+  width: 3.25in;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.lh-rule {
+  display: block;
+  border: none;
+  border-top: 0.75pt solid var(--color-gold);
+  margin: 0 var(--margin-side);
+}
+
+/* ---- Body ---- */
+.lh-body {
+  flex: 1;
+  padding: 0.45in var(--margin-side) 0.3in;
+  font-family: var(--font-serif);
+  font-size: 11pt;
+  line-height: 1.6;
+  color: var(--color-charcoal);
+}
+
+.lh-date {
+  margin-bottom: 0.25in;
+  font-size: 11pt;
+}
+
+.lh-recipient {
+  margin-bottom: 0.3in;
+  line-height: 1.5;
+}
+
+.lh-salutation {
+  margin-bottom: 0.15in;
+}
+
+.lh-body-text {
+  margin-bottom: 0.15in;
+  min-height: 1in;  /* breathing room for typing */
+}
+
+.lh-closing {
+  margin-top: 0.3in;
+  margin-bottom: 0.5in;
+}
+
+.lh-signature-name {
+  font-weight: 600;
+}
+
+.lh-signature-title {
+  font-size: 10pt;
+  color: var(--color-mid-gray);
+}
+
+/* Placeholder styling — screen only */
+@media screen {
+  [contenteditable] {
+    outline: none;
+    border-bottom: 1px dashed #ccc;
+    min-width: 1em;
+    display: inline-block;
+    cursor: text;
+  }
+  [contenteditable]:focus {
+    border-bottom-color: var(--color-navy);
+    background: #f5f8fc;
+  }
+  .lh-hint {
+    color: var(--color-light-gray);
+    font-style: italic;
+    font-size: 10pt;
+    pointer-events: none;
+  }
+}
+@media print {
+  html, body { background: #fff; }
+  .lh-hint { display: none; }
+  [contenteditable] { border-bottom: none; }
+}
+
+/* ---- Footer ---- */
+.lh-footer {
+  padding: 0 var(--margin-side) var(--margin-bottom);
+}
+
+.lh-footer-rule {
+  display: block;
+  border: none;
+  border-top: 0.75pt solid var(--color-gold);
+  margin-bottom: 0.1in;
+}
+
+.lh-footer-contact {
+  font-family: var(--font-sans);
+  font-size: 8pt;
+  color: var(--color-mid-gray);
+  text-align: center;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.05in;
+}
+
+.lh-footer-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 8pt;
+  color: var(--color-gold);
+  text-align: center;
+  letter-spacing: 0.02em;
+}

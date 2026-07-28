@@ -7,9 +7,11 @@
 #
 # The vault nests logos in subfolders (horizontal/, icon/, shield/, stacked/);
 # this repo keeps them flat because the UI kits and _ds_bundle.js reference flat
-# paths. Two marks are DS-native and NOT in the vault, so they are never touched:
-#   - parish-mono-white_three-mark.svg   (newsletter header)
+# One mark is DS-native and NOT in the vault, so it is never touched:
 #   - parish-reverse_combined-shield.svg (preview card)
+# NOTE: parish-mono-white_three-mark.svg was DS-native until 2026-07-27, when the
+# three-mark-lockup was added to the vault. It has been deleted; use
+# parish-mono-white_three-mark-lockup.svg instead.
 #
 # Override the vault location with UKC_DATA_LOGOS if the repos aren't siblings.
 #
@@ -46,8 +48,8 @@ cp -f "$SRC/icon/parish-gold-screen-cross_cross.svg" "$DST/parish-gold-screen-cr
 cp -f "$SRC/icon/parish-gold-print-cross_cross.svg"  "$DST/parish-gold-print-cross.svg"
 copied=$((copied + 2))
 
-# Sanity check: the DS-native marks must survive a sync.
-for native in parish-mono-white_three-mark.svg parish-reverse_combined-shield.svg; do
+# Sanity check: the DS-native mark must survive a sync.
+for native in parish-reverse_combined-shield.svg; do
   if [[ ! -f "$DST/$native" ]]; then
     echo "warning: DS-native mark missing after sync: $native" >&2
   fi
