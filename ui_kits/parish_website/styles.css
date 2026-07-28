@@ -144,6 +144,15 @@ button { cursor: pointer; font-family: inherit; }
   padding: 11px 21px;
 }
 .btn--secondary:hover { background: var(--bg-surface-alt); }
+.btn--outline-light {
+  color: var(--color-warm-white);
+  border-color: var(--color-warm-white);
+}
+.btn--outline-light:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--color-warm-white);
+  border-color: var(--color-warm-white);
+}
 .btn--ghost {
   background: transparent;
   color: var(--color-navy);
