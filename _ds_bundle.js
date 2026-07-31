@@ -1799,7 +1799,7 @@ function SJBPage({
       fontStyle: "italic",
       color: "var(--color-navy)"
     }
-  }, "Holli, please share the active SJB ministries (Knights of Columbus council, Altar Society, lectors, Eucharistic ministers, music ministry, RCIA team, hospitality, faith formation grades) so this section can be filled in.")), /*#__PURE__*/React.createElement("section", {
+  }, "Holli, please share the active SJB ministries (Knights of Columbus council, Altar Society, lectors, Eucharistic ministers, music ministry, OCIA team, hospitality, faith formation grades) so this section can be filled in.")), /*#__PURE__*/React.createElement("section", {
     className: "section section--narrow section--tight"
   }, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow",
