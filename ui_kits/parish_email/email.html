@@ -69,7 +69,9 @@
               </tr>
               <tr>
                 <td align="center" style="font-family:Arial,Helvetica,sans-serif; color:#C4A24C; font-size:11px; letter-spacing:2px; text-transform:uppercase; padding-top:8px;">
-                  St. John the Baptist &nbsp;&#9670;&nbsp; Immaculate Conception
+                  <span data-slot="footer-parish-sjb" style="display:inline-block; white-space:nowrap;">St. John the Baptist</span>
+                  &nbsp;&#9670;&nbsp;
+                  <span data-slot="footer-parish-ic" style="display:inline-block; white-space:nowrap;">Immaculate Conception</span>
                 </td>
               </tr>
             </table>
@@ -78,7 +80,7 @@
 
         <!-- ===== Greeting strip ===== -->
         <tr>
-          <td style="background:#2E7D32; padding:10px 32px; font-family:Arial,Helvetica,sans-serif; color:#FAF8F5; font-size:12px; letter-spacing:2px; text-transform:uppercase; text-align:center; font-weight:bold;" class="px">
+          <td data-slot="greeting" style="background:#2E7D32; padding:10px 32px; font-family:Arial,Helvetica,sans-serif; color:#FAF8F5; font-size:12px; letter-spacing:2px; text-transform:uppercase; text-align:center; font-weight:bold;" class="px">
             Your Weekly Parish Bulletin
           </td>
         </tr>
@@ -122,7 +124,7 @@
         <!-- ===== Three things to know ===== -->
         <tr>
           <td style="padding:18px 32px 0 32px;" class="px">
-            <p style="margin:0 0 12px 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#2E7D32; font-weight:bold;">
+            <p data-slot="announcements-heading" style="margin:0 0 12px 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#2E7D32; font-weight:bold;">
               Three Things to Know This Week
             </p>
             <!-- item -->
@@ -162,7 +164,7 @@
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#EAF1E4; border-left:3px solid #2E7D32;">
               <tr>
                 <td style="padding:14px 18px;">
-                  <p style="margin:0 0 4px 0; font-family:Arial,Helvetica,sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#1B5E20; font-weight:bold;">This Week on FORMED</p>
+                  <p data-slot="formed-heading" style="margin:0 0 4px 0; font-family:Arial,Helvetica,sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#1B5E20; font-weight:bold;">This Week on FORMED</p>
                   <p data-slot="formed-copy" style="margin:0; font-family:Georgia,'Times New Roman',serif; font-size:15px; line-height:1.5; color:#333333;">
                     <strong>Forgiven: The Transforming Power of Confession</strong> — a perfect
                     companion to this Sunday’s Gospel. <a href="https://formed.org" style="color:#2E5E8A; font-weight:bold;">Watch free &rsaquo;</a>
@@ -176,7 +178,7 @@
         <!-- ===== One thing you can do (bulletproof button) ===== -->
         <tr>
           <td align="center" style="padding:26px 32px 8px 32px;" class="px">
-            <p style="margin:0 0 14px 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#6B6B66; font-weight:bold;">One Thing You Can Do</p>
+            <p data-slot="cta-heading" style="margin:0 0 14px 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#6B6B66; font-weight:bold;">One Thing You Can Do</p>
             <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
               <tr>
                 <td align="center" bgcolor="#2E5E8A" style="border-radius:2px;">
@@ -195,7 +197,7 @@
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #E5DFD3;">
               <tr><td style="height:14px; font-size:0; line-height:0;">&nbsp;</td></tr>
               <tr>
-                <td style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.7; color:#333333;">
+                <td data-slot="mass-times" style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.7; color:#333333;">
                   <span style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#2E7D32; font-weight:bold;">Mass Times</span><br>
                   <strong style="color:#2E5E8A;">Sun 8:00 AM</strong> Immaculate Conception, Roslyn &nbsp;&middot;&nbsp;
                   <strong style="color:#2E5E8A;">Sun 10:00 AM</strong> St. John the Baptist, Cle Elum<br>
@@ -215,19 +217,22 @@
               <tr><td style="border-top:1px solid #E5DFD3; height:16px; font-size:0; line-height:0;">&nbsp;</td></tr>
               <tr>
                 <td align="center" style="font-family:Georgia,'Times New Roman',serif; font-size:13px; color:#2E5E8A; letter-spacing:1px; padding-bottom:8px;">
-                  St. John the Baptist &nbsp;&#9670;&nbsp; Immaculate Conception
+                  <span data-slot="footer-parish-sjb" style="display:inline-block; white-space:nowrap;">St. John the Baptist</span>
+                  &nbsp;&#9670;&nbsp;
+                  <span data-slot="footer-parish-ic" style="display:inline-block; white-space:nowrap;">Immaculate Conception</span>
                 </td>
               </tr>
               <tr>
-                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6B6B66; line-height:1.6;">
+                <td data-slot="contact-details" align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6B6B66; line-height:1.6;">
                   Parish Office &middot; (509) 674-2531 &middot; parish@ukccatholic.org<br>
+                  <span data-slot="mailing-address">P.O. Box 630, Cle Elum, WA 98922</span><br>
                   <a href="https://ukccatholic.org" style="color:#2E5E8A;">ukccatholic.org</a> &nbsp;&middot;&nbsp;
                   <a href="https://facebook.com" style="color:#2E5E8A;">Facebook</a> &nbsp;&middot;&nbsp;
                   <a href="https://youtube.com" style="color:#2E5E8A;">YouTube</a>
                 </td>
               </tr>
               <tr>
-                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:11px; color:#9A9690; padding-top:14px; line-height:1.6;">
+                <td data-slot="preferences" align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6B6B66; padding-top:14px; line-height:1.6;">
                   Diocese of Yakima &middot; Bishop Joseph Tyson<br>
                   You’re receiving this because you’re part of our parish family.
                   <a href="{{ unsubscribe }}" style="color:#6B6B66;">Unsubscribe</a> &middot;
