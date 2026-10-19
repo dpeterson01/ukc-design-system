@@ -1018,6 +1018,75 @@ body {
   margin-bottom: 0.06in;
 }
 
+/* Sponsor ads — last-page slot, between the reference grid and giving cards.
+   A 6-column grid lets ads of different sizes share rows. Each ad has a fixed
+   height so the block is predictable; render.js caps the block at one third of
+   the page and fails the layout check if it runs over. Sizes (span x height):
+   banner 6x1.25in, wide 6x2in, half 3x1.75in, half-tall 3x3in,
+   third 2x1.75in, third-tall 2x3in. */
+.ads {
+  flex: 0 0 auto;
+  margin-bottom: 0.14in;
+}
+.ads__head {
+  font-family: var(--font-sans);
+  font-size: 8pt;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-charcoal-light);
+  border-bottom: 1px solid var(--color-hairline);
+  padding-bottom: 0.03in;
+  margin-bottom: 0.08in;
+}
+.ads__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.10in 0.14in;
+  align-items: start;
+}
+.ad {
+  grid-column: span 6;
+  height: 1.25in;
+  border: 1pt solid var(--color-hairline);
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.ad[data-size="banner"]     { grid-column: span 6; height: 1.25in; }
+.ad[data-size="wide"]       { grid-column: span 6; height: 2in; }
+.ad[data-size="half"]       { grid-column: span 3; height: 1.75in; }
+.ad[data-size="half-tall"]  { grid-column: span 3; height: 3in; }
+.ad[data-size="third"]      { grid-column: span 2; height: 1.75in; }
+.ad[data-size="third-tall"] { grid-column: span 2; height: 3in; }
+.ad img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.ad__text { padding: 0.10in 0.14in; text-align: center; }
+.ad__headline {
+  font-family: var(--font-serif);
+  font-size: 13pt;
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.2;
+}
+.ad__body {
+  font-family: var(--font-sans);
+  font-size: 9pt;
+  color: var(--color-charcoal);
+  line-height: 1.4;
+  margin-top: 0.04in;
+}
+.ad__contact {
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-navy);
+  margin-top: 0.05in;
+}
+
 /* Giving — two QR cards side by side */
 .giving {
   display: grid;
