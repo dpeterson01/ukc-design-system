@@ -154,7 +154,7 @@
 
   <footer class="page-footer">
     <span class="page-footer__parishes">St. John the Baptist <span class="diamond">◆</span> Immaculate Conception</span>
-    <span class="page-footer__meta"><span class="page-footer__url">ukccatholic.org</span><span class="page-footer__page">1</span></span>
+    <span class="page-footer__meta"><span class="page-footer__url">ukccatholic.org</span></span>
   </footer>
 </section>
 
@@ -340,7 +340,7 @@ J E S U S E</div>
 
   <footer class="page-footer">
     <span class="page-footer__parishes">St. John the Baptist <span class="diamond">◆</span> Immaculate Conception</span>
-    <span class="page-footer__meta"><span class="page-footer__url">ukccatholic.org</span><span class="page-footer__page">2</span></span>
+    <span class="page-footer__meta"><span class="page-footer__url">ukccatholic.org</span></span>
   </footer>
 </section>
 
@@ -403,32 +403,28 @@ J E S U S E</div>
     </div>
   </div>
 
-  <!-- Stewardship -->
-  <div class="stewardship">
-    <div class="stewardship__head">Stewardship · Last Week</div>
-    <div class="stewardship__grid">
-      <div class="stewardship__cell">
-        <span class="stewardship__label">SJB Offertory</span>
-        <span class="stewardship__amount">$2,140</span>
-        <span class="stewardship__sub">42 envelopes</span>
+  <!-- Offertory Collection · one number per parish for the prior week, designated
+       gifts broken out below. render.js fills it from the ledger or the issue file
+       and removes the block when no figures exist. -->
+  <div class="offertory">
+    <div class="offertory__head">Offertory Collection</div>
+    <p class="offertory__period">Figures are for the prior week, Sunday, June 7. Thank you for your generosity.</p>
+    <div class="offertory__grid">
+      <div class="offertory__cell">
+        <span class="offertory__label">St. John the Baptist</span>
+        <span class="offertory__amount">$2,140</span>
       </div>
-      <div class="stewardship__cell">
-        <span class="stewardship__label">IC Offertory</span>
-        <span class="stewardship__amount">$1,315</span>
-        <span class="stewardship__sub">28 envelopes</span>
-      </div>
-      <div class="stewardship__cell">
-        <span class="stewardship__label">Weekly Need</span>
-        <span class="stewardship__amount">$3,800</span>
-        <span class="stewardship__sub">combined budget</span>
-      </div>
-      <div class="stewardship__cell">
-        <span class="stewardship__label">Online Giving</span>
-        <span class="stewardship__amount">$640</span>
-        <span class="stewardship__sub">12 households</span>
+      <div class="offertory__cell">
+        <span class="offertory__label">Immaculate Conception</span>
+        <span class="offertory__amount">$1,315</span>
       </div>
     </div>
-    <p class="stewardship__note">“Each must give as he has decided in his heart.” — 2 Cor 9:7</p>
+    <div class="offertory__designated">
+      <div class="offertory__designated-head">Designated gifts</div>
+      <ul class="offertory__designated-list">
+        <li><span class="offertory__purpose">World Mission Sunday</span><span class="offertory__by">SJB $100 · IC $30</span></li>
+      </ul>
+    </div>
   </div>
 
   <!-- House card · rotating service slot -->
@@ -482,7 +478,7 @@ J E S U S E</div>
 
   <footer class="page-footer">
     <span class="page-footer__parishes">St. John the Baptist <span class="diamond">◆</span> Immaculate Conception</span>
-    <span class="page-footer__meta"><span class="page-footer__url">ukccatholic.org</span><span class="page-footer__page">3</span></span>
+    <span class="page-footer__meta"><span class="page-footer__url">ukccatholic.org</span></span>
   </footer>
 </section>
 
@@ -495,8 +491,8 @@ J E S U S E</div>
   <div class="section-rule"></div>
 
   <div class="reference-grid">
-    <!-- Mass times -->
-    <div class="ref-block">
+    <!-- Mass times (spans the two rows beside it) -->
+    <div class="ref-block ref-block--tall">
       <div class="ref-block__head">Mass Times</div>
       <dl>
         <dt>Sun 8:00 AM</dt><dd>Immaculate Conception · Roslyn</dd>
@@ -508,32 +504,28 @@ J E S U S E</div>
       </dl>
     </div>
 
-    <!-- Confession & Adoration -->
-    <div class="ref-block">
-      <div class="ref-block__head">Confession &amp; Adoration</div>
+    <!-- Reconciliation & Adoration. Stacked: label above text, so the full
+         name "Sacrament of Reconciliation" fits. -->
+    <div class="ref-block ref-block--stacked">
+      <div class="ref-block__head">Reconciliation &amp; Adoration</div>
       <dl>
-        <dt>Confession</dt><dd>Sat 3:30–4:30 PM · SJB, or by appointment</dd>
-        <dt>Adoration</dt><dd>1st Friday, 8:30 AM–12 PM (alternating churches)</dd>
+        <dt>Sacrament of Reconciliation</dt><dd>Sat 3:30–4:30 PM · SJB, or by appointment</dd>
+        <dt>Adoration</dt><dd>1st Friday, 8:30 AM–12 PM · alternates monthly between our two churches</dd>
       </dl>
     </div>
 
-    <!-- Sacraments -->
+    <!-- Pastoral staff, with the Pastoral Office address, phone and hours on top -->
     <div class="ref-block">
-      <div class="ref-block__head">Sacraments</div>
-      <dl>
-        <dt>Baptism</dt><dd>Contact the office to begin preparation</dd>
-        <dt>Marriage</dt><dd>Six months’ notice required</dd>
-        <dt>Anointing</dt><dd>Call anytime — ext. 5</dd>
-      </dl>
-    </div>
-
-    <!-- Staff directory -->
-    <div class="ref-block">
-      <div class="ref-block__head">Parish Staff</div>
+      <div class="ref-block__head">Pastoral Staff</div>
+      <div class="ref-block__office">
+        <p><strong>Pastoral Office</strong></p>
+        <p>303 W. 2nd St, PO Box 630, Cle Elum</p>
+        <p>509-674-2531</p>
+        <p>Tuesday to Friday, 9 AM to 3 PM</p>
+      </div>
       <dl>
         <dt>Pastor</dt><dd>Very Rev. Francisco Higuera · ext. 5</dd>
-        <dt>Office</dt><dd>Holli Sullivan · (509) 674-2531</dd>
-        <dt>Faith Formation</dt><dd>Trish Griswold</dd>
+        <dt>Office</dt><dd>Holli Sullivan · ext. 2</dd>
         <dt>Accounting</dt><dd>Wendy Hill · ext. 3</dd>
       </dl>
     </div>
@@ -603,7 +595,7 @@ J E S U S E</div>
 
   <footer class="page-footer">
     <span class="page-footer__parishes">Diocese of Yakima <span class="diamond">◆</span> Bishop Joseph Tyson</span>
-    <span class="page-footer__meta"><span class="page-footer__url">ukccatholic.org</span><span class="page-footer__page">4</span></span>
+    <span class="page-footer__meta"><span class="page-footer__url">ukccatholic.org</span></span>
   </footer>
 </section>
 

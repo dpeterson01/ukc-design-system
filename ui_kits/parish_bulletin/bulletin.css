@@ -317,9 +317,10 @@ body {
   font-weight: 600;
   color: var(--color-warm-white);
 }
+/* 0.95in: the One Thing link is often a long give URL. Bigger squares scan reliably. */
 .one-thing__qr {
-  width: 0.7in;
-  height: 0.7in;
+  width: 0.95in;
+  height: 0.95in;
   background: var(--color-warm-white);
   padding: 0.05in;
   display: flex;
@@ -676,35 +677,41 @@ body {
 }
 
 /* =============================================================
-   STEWARDSHIP · last week's offering panel (Page 3)
+   OFFERTORY COLLECTION · prior week's giving panel (Page 3)
+   One number per parish, designated gifts listed beneath.
    ============================================================= */
-.stewardship {
+.offertory {
   margin: 0 0 0.22in;
   border: 1pt solid var(--color-hairline);
   background: var(--color-warm-white);
   padding: 0.12in 0.18in;
 }
-.stewardship__head {
+.offertory__head {
   font-family: var(--font-sans);
   font-size: 10pt;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--liturgical-accent);
-  margin-bottom: 0.10in;
 }
-.stewardship__grid {
+.offertory__period {
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  color: var(--color-charcoal-light);
+  margin: 0.02in 0 0.08in;
+}
+.offertory__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.1fr 1.1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 0.18in;
   align-items: baseline;
 }
-.stewardship__cell {
+.offertory__cell {
   display: flex;
   flex-direction: column;
   gap: 0.02in;
 }
-.stewardship__label {
+.offertory__label {
   font-family: var(--font-sans);
   font-size: 8pt;
   letter-spacing: 0.10em;
@@ -712,27 +719,48 @@ body {
   color: var(--color-charcoal-light);
   font-weight: 600;
 }
-.stewardship__amount {
+.offertory__amount {
   font-family: var(--font-serif);
-  font-size: 12pt;
+  font-size: 14pt;
   font-weight: 700;
   color: var(--color-navy);
   font-variant-numeric: tabular-nums;
   line-height: 1.1;
 }
-.stewardship__sub {
+.offertory__designated {
+  margin-top: 0.09in;
+  padding-top: 0.06in;
+  border-top: 1px solid var(--color-hairline);
+}
+.offertory__designated-head {
   font-family: var(--font-sans);
   font-size: 8pt;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
   color: var(--color-charcoal-light);
+  font-weight: 600;
+  margin-bottom: 0.03in;
 }
-.stewardship__note {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 10pt;
+.offertory__designated-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 9pt;
   color: var(--color-charcoal);
-  margin-top: 0.10in;
-  text-align: right;
 }
+.offertory__designated-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.02in 0.18in;
+}
+.offertory__designated-list li {
+  display: flex;
+  gap: 0.10in;
+  padding: 0.015in 0;
+}
+.offertory__purpose { font-weight: 600; color: var(--color-navy); }
+.offertory__by { font-variant-numeric: tabular-nums; }
 
 /* Mass Intentions list (Page 3) */
 .intentions {
@@ -948,6 +976,12 @@ body {
 }
 .ref-block { display: flex; flex-direction: column; gap: 0.06in; }
 .ref-block.span-2 { grid-column: 1 / -1; }
+.ref-block--tall { grid-row: span 2; }
+.ref-block.ref-block--stacked dl { grid-template-columns: 1fr; gap: 0; }
+.ref-block--stacked dd { margin-bottom: 0.05in; }
+.ref-block__office { display: flex; flex-direction: column; gap: 0.01in; }
+.ref-block__office p { line-height: 1.4; }
+.ref-block__office strong { font-weight: 600; color: var(--color-navy); }
 .ref-block.span-2 ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1097,13 +1131,15 @@ body {
   border: 1pt solid var(--color-hairline);
   padding: 0.10in;
   display: grid;
-  grid-template-columns: 0.6in 1fr;
-  gap: 0.10in;
+  grid-template-columns: 1.1in 1fr;
+  gap: 0.12in;
   align-items: center;
 }
+/* 1.1in box: the give links are long, so the code is dense. At the old 0.6in the
+   modules printed under 0.3mm and phones could not read them. */
 .giving__qr {
-  width: 0.6in;
-  height: 0.6in;
+  width: 1.1in;
+  height: 1.1in;
   background: var(--color-warm-white);
   padding: 0.04in;
 }
@@ -1164,11 +1200,6 @@ body {
   align-items: center;
 }
 .page-footer__url { color: var(--color-navy); font-weight: 600; }
-.page-footer__page {
-  font-family: var(--font-sans);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.08em;
-}
 
 /* Children's Corner — in-flow bottom anchor on Page 4.
    margin-top: auto pushes it below the reference-grid; cannot overlap
