@@ -976,7 +976,9 @@ body {
 }
 .ref-block { display: flex; flex-direction: column; gap: 0.06in; }
 .ref-block.span-2 { grid-column: 1 / -1; }
-.ref-block--tall { grid-row: span 2; }
+.ref-col { display: flex; flex-direction: column; gap: 0.14in; min-width: 0; }
+.ref-block--parishes li:first-child .parish-block { border-top: none; }
+.ref-block--parishes ul { display: grid; grid-template-columns: 1fr; row-gap: 0.06in; }
 .ref-block.ref-block--stacked dl { grid-template-columns: 1fr; gap: 0; }
 .ref-block--stacked dd { margin-bottom: 0.05in; }
 .ref-block__office { display: flex; flex-direction: column; gap: 0.01in; }
@@ -1056,7 +1058,7 @@ body {
    A 6-column grid lets ads of different sizes share rows. Each ad has a fixed
    height so the block is predictable; render.js caps the block at one third of
    the page and fails the layout check if it runs over. Sizes (span x height):
-   banner 6x1.25in, wide 6x2in, half 3x1.75in, half-tall 3x3in,
+   banner 6x1.25in, wide 6x2in, half 3x1.45in, half-tall 3x3in,
    third 2x1.75in, third-tall 2x3in. */
 .ads {
   flex: 0 0 auto;
@@ -1092,7 +1094,7 @@ body {
 }
 .ad[data-size="banner"]     { grid-column: span 6; height: 1.25in; }
 .ad[data-size="wide"]       { grid-column: span 6; height: 2in; }
-.ad[data-size="half"]       { grid-column: span 3; height: 1.75in; }
+.ad[data-size="half"]       { grid-column: span 3; height: 1.45in; }
 .ad[data-size="half-tall"]  { grid-column: span 3; height: 3in; }
 .ad[data-size="third"]      { grid-column: span 2; height: 1.75in; }
 .ad[data-size="third-tall"] { grid-column: span 2; height: 3in; }
