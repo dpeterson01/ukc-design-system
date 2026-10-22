@@ -1551,3 +1551,24 @@ body {
 /* Page-specific bottom padding to reserve space for absolutely-positioned
    bottom anchors (newcomer on Page 3, kids-corner on Page 4). The footer
    sits inside that reserved space at bottom: 0.3in. */
+
+/* This Week: cancelled, new and changed Masses (A13). Text tags carry the meaning so
+   it survives black-and-white printing; color is only extra. */
+.calendar__tag {
+  display: inline-block;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.005in 0.05in;
+  margin-right: 0.05in;
+  border: 1pt solid var(--color-navy);
+  color: var(--color-navy);
+  vertical-align: 1pt;
+}
+.calendar__note { display: block; font-size: 8.5pt; color: var(--color-charcoal-light); font-style: italic; }
+.calendar__row--cancelled .calendar__event { text-decoration: line-through; }
+.calendar__row--cancelled .calendar__tag { background: var(--color-navy); color: #ffffff; }
+.calendar__row--new td { font-weight: 600; }
+.calendar__row--new .calendar__tag { border-color: var(--color-gold); color: var(--color-navy); background: rgba(196, 162, 76, 0.25); }
+.calendar__row--changed .calendar__tag { border-style: dashed; }
