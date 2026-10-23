@@ -759,6 +759,24 @@ body {
   gap: 0.10in;
   padding: 0.015in 0;
 }
+.offertory__appeal {
+  margin-top: 0.08in;
+  padding-top: 0.06in;
+  border-top: 1px solid var(--color-hairline);
+}
+.offertory__appeal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.18in;
+}
+.offertory__appeal-cell { display: flex; flex-direction: column; gap: 0.01in; }
+.offertory__appeal-line {
+  font-family: var(--font-sans);
+  font-size: 9pt;
+  color: var(--color-charcoal);
+  font-variant-numeric: tabular-nums;
+}
+.offertory__appeal-line strong { color: var(--color-navy); }
 .offertory__purpose { font-weight: 600; color: var(--color-navy); }
 .offertory__by { font-variant-numeric: tabular-nums; }
 
