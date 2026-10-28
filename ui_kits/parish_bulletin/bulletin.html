@@ -98,9 +98,15 @@
      ============================================================ -->
 <section class="page" id="page-1">
   <header class="masthead">
-    <div class="masthead__lockup">
-      <img src="../../assets/logos/parish-fullcolor_primary-lockup.svg"
+    <div class="masthead__brand">
+      <!-- Marks only (lamb, cross, M). The parish names are live type beside them,
+           SJB first, following the logo order. render.js fills the names from config. -->
+      <img class="masthead__marks" src="../../assets/logos/parish-fullcolor_three-mark-lockup.svg"
            alt="Catholic Parishes of Upper Kittitas County">
+      <div class="masthead__names">
+        <div class="masthead__parish"><span class="masthead__pname">St. John the Baptist</span><span class="masthead__pcity">Cle Elum</span></div>
+        <div class="masthead__parish"><span class="masthead__pname">Immaculate Conception</span><span class="masthead__pcity">Roslyn</span></div>
+      </div>
     </div>
     <div class="masthead__date">
       <div class="masthead__sunday">Eleventh Sunday in Ordinary Time</div>
@@ -188,7 +194,11 @@
         <p class="feature__eyebrow">Saint of the Week</p>
         <h3 class="feature__title">St. Anthony of Padua</h3>
         <div class="feature__layout">
-          <div class="feature__saint-figure">Saint image</div>
+          <div class="feature__saint-side">
+            <div class="feature__saint-figure">Saint image</div>
+            <p class="feature__learn">Learn more: franciscanmedia.org/saint-of-the-day</p>
+            <p class="feature__source">Source: Franciscan Media</p>
+          </div>
           <div>
             <div class="feature__body">
               <p>A Franciscan friar and gifted preacher, Anthony (1195–1231) was so steeped
@@ -365,50 +375,57 @@ J E S U S E</div>
         <li><span class="intentions__when">Fri 8 AM</span><span class="intentions__for">Health of the Griswold family</span></li>
       </ul>
     </div>
-    <!-- This week's calendar -->
-    <div class="upcoming">
-      <div class="upcoming__head">This Week</div>
-      <table class="calendar">
-        <thead><tr><th>Day</th><th>Event</th><th>Where</th></tr></thead>
-        <tbody>
-          <tr><td>Mon 16</td><td>Rosary Group</td><td>IC</td></tr>
-          <tr><td>Tue 17</td><td>Bible Study, 6 PM</td><td>SJB Hall</td></tr>
-          <tr><td>Wed 18</td><td>Faith Formation</td><td>SJB</td></tr>
-          <tr><td>Thu 19</td><td>Food Bank, 9 AM</td><td>Cle Elum</td></tr>
-          <tr><td>Sat 21</td><td>Confessions, 3:30</td><td>SJB</td></tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 
-  <!-- Announcements -->
+  <!-- Announcements, by tier. Showcase is the One Thing on page 1. Feature is the boxed
+       item below (one per issue, often with a QR). Standard items run in two columns,
+       then Space-permitting items fill whatever room is left. render.js builds all of it
+       and removes the pieces that are empty. -->
   <div class="announcements">
     <div class="announcements__head">Announcements</div>
-    <div class="announcement">
-      <div class="announcement__title">Parish Picnic — Save the Date</div>
-      <div class="announcement__body">Our annual parish picnic returns Sunday, July 12,
-        after the 10 a.m. Mass at SJB. Burgers provided; bring a side or dessert to share.</div>
-      <div class="announcement__contact">Sign up at the office · (509) 674-2531</div>
+    <div class="announcement-feature">
+      <div class="announcement-feature__body">
+        <div class="announcement-feature__eyebrow">Featured</div>
+        <div class="announcement__title">Parish Picnic — Save the Date</div>
+        <div class="announcement__body">Our annual parish picnic returns Sunday, July 12,
+          after the 10 a.m. Mass at SJB. Burgers provided; bring a side or dessert to share.</div>
+        <div class="announcement__contact">Sign up at the office · (509) 674-2531</div>
+      </div>
+      <div class="announcement-feature__qr"></div>
     </div>
-    <div class="announcement">
-      <div class="announcement__title">Lectors &amp; Eucharistic Ministers Needed</div>
-      <div class="announcement__body">Both parishes are building the summer schedule. If you
-        feel called to serve at the ambo or the altar, we would love to train you.</div>
-      <div class="announcement__contact">Contact Holli in the parish office</div>
-    </div>
-    <div class="announcement">
-      <div class="announcement__title">Second Collection — Peter’s Pence</div>
-      <div class="announcement__body">Next weekend’s second collection supports the Holy
-        Father’s charitable works around the world.</div>
+    <div class="announcements__grid">
+      <div class="announcement">
+        <div class="announcement__title">Lectors &amp; Eucharistic Ministers Needed</div>
+        <div class="announcement__body">Both parishes are building the summer schedule. If you
+          feel called to serve at the ambo or the altar, we would love to train you.</div>
+        <div class="announcement__contact">Contact Holli in the parish office</div>
+      </div>
+      <div class="announcement">
+        <div class="announcement__title">Second Collection — Peter’s Pence</div>
+        <div class="announcement__body">Next weekend’s second collection supports the Holy
+          Father’s charitable works around the world.</div>
+      </div>
     </div>
   </div>
 
-  <!-- Offertory Collection · one number per parish for the prior week, designated
-       gifts broken out below. render.js fills it from the ledger or the issue file
+  <!-- News · optional. Two or three items in our own words, each with a publisher
+       credit and a short link. render.js removes the block when there are none. -->
+  <div class="news">
+    <div class="news__head">News</div>
+    <div class="news__grid">
+      <div class="news__item">
+        <div class="news__headline">Sample headline</div>
+        <div class="news__summary">One or two sentences in our own words.</div>
+        <div class="news__source">Source: Publisher · publisher.org/story</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offertory Collection · one line per parish for the prior week, condensed.
+       Required, but not a focus. render.js fills it from the ledger or the issue file
        and removes the block when no figures exist. -->
   <div class="offertory">
     <div class="offertory__head">Offertory Collection</div>
-    <p class="offertory__period">Figures are for the prior week, Sunday, June 7. Thank you for your generosity.</p>
     <div class="offertory__grid">
       <div class="offertory__cell">
         <span class="offertory__label">St. John the Baptist</span>
@@ -420,22 +437,28 @@ J E S U S E</div>
       </div>
     </div>
     <div class="offertory__designated">
-      <div class="offertory__designated-head">Designated gifts</div>
+      <span class="offertory__designated-head">Designated gifts</span>
       <ul class="offertory__designated-list">
         <li><span class="offertory__purpose">World Mission Sunday</span><span class="offertory__by">SJB $100 · IC $30</span></li>
       </ul>
     </div>
-    <!-- Annual Catholic Appeal: per parish goal, pledge, paid to date (and potential
-         rebate). render.js fills it from the ledger and removes it when there is none. -->
-    <div class="offertory__appeal">
-      <div class="offertory__designated-head">Annual Catholic Appeal</div>
-      <div class="offertory__appeal-grid">
-        <div class="offertory__appeal-cell">
+  </div>
+
+  <!-- Annual Catholic Appeal · explainer on top, per parish goal, pledged and paid,
+       and the give QR. render.js fills the figures from the ledger (current appeal
+       year only) and marks them when they are missing. -->
+  <div class="appeal">
+    <div class="appeal__main">
+      <div class="appeal__head">Annual Catholic Appeal</div>
+      <p class="appeal__explainer"><strong>What is the Annual Catholic Appeal?</strong> Every year the Diocese of Yakima invites each household to renew its commitment to ministries no single parish can carry alone.</p>
+      <div class="appeal__grid">
+        <div class="appeal__cell">
           <span class="offertory__label">St. John the Baptist</span>
           <span class="offertory__appeal-line">Goal <strong>$20,000</strong></span>
         </div>
       </div>
     </div>
+    <div class="appeal__qr"></div>
   </div>
 
   <!-- House card · rotating service slot -->
@@ -514,6 +537,13 @@ J E S U S E</div>
         <dt>Wed 6:00 PM</dt><dd>Immaculate Conception</dd>
         <dt>Fri 8:00 AM</dt><dd>Immaculate Conception</dd>
       </dl>
+      <!-- Events and Mass changes. render.js fills it from the issue's "calendar" rows,
+           retitles the block "Mass Times and Events", and removes it when there are none. -->
+      <table class="ref-events">
+        <tbody>
+          <tr><td>Mon 2</td><td>All Souls Day Mass, 12:00 PM</td><td>IC</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Reconciliation & Adoration. Stacked: label above text, so the full
@@ -529,6 +559,16 @@ J E S U S E</div>
 
     <!-- Right column: all the places and contacts. Our Two Parishes, then Pastoral Staff -->
     <div class="ref-col">
+    <!-- Diocese association, above the two parishes. render.js fills it from config. -->
+    <div class="ref-block ref-block--diocese">
+      <div class="ref-block__head">Our Diocese</div>
+      <div class="diocese-block">
+        <div class="diocese-block__name">Diocese of Yakima</div>
+        <p class="diocese-block__bishop">Bishop Joseph Tyson</p>
+        <p class="diocese-block__url">yakimadiocese.org</p>
+      </div>
+    </div>
+
     <!-- Parish addresses -->
     <div class="ref-block ref-block--parishes">
       <div class="ref-block__head">Our Two Parishes</div>
@@ -604,8 +644,8 @@ J E S U S E</div>
         <svg class="qr-placeholder" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#fff"/><g fill="#1A3A52"><rect x="10" y="10" width="20" height="20"/><rect x="70" y="10" width="20" height="20"/><rect x="10" y="70" width="20" height="20"/><rect x="46" y="22" width="8" height="8"/><rect x="46" y="46" width="16" height="16"/><rect x="74" y="50" width="8" height="8"/><rect x="50" y="74" width="8" height="8"/></g></svg>
       </div>
       <div>
-        <div class="giving__label">Parish Website</div>
-        <div class="giving__sub">ukccatholic.org</div>
+        <div class="giving__label">Annual Catholic Appeal</div>
+        <div class="giving__sub">Diocese of Yakima</div>
       </div>
     </div>
   </div>

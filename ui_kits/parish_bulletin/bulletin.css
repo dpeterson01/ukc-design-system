@@ -66,6 +66,10 @@
 .season-christmas { --liturgical-accent: #C9A93A; --liturgical-accent-tint: #F6EFD5; --liturgical-accent-deep: #7E6B23; --liturgical-season: "Christmas"; }
 .season-lent      { --liturgical-accent: #6A1B9A; --liturgical-accent-tint: #F1E7F5; --liturgical-accent-deep: #4A0E66; --liturgical-season: "Lent"; }
 .season-easter    { --liturgical-accent: #C9A93A; --liturgical-accent-tint: #F6EFD5; --liturgical-accent-deep: #7E6B23; --liturgical-season: "Easter"; }
+/* Rose: Gaudete (3rd Sunday of Advent). Set alongside season-advent, so it wins. A deeper rose
+   than the vestment so white and gold text hold contrast on print. */
+.season-rose      { --liturgical-accent: #A23A69; --liturgical-accent-tint: #FBE9F0; --liturgical-accent-deep: #7A2650; --liturgical-season: "Advent"; }
+.season-rose .hero__quote { color: #F7E9BF; }
 .season-pentecost { --liturgical-accent: #C62828; --liturgical-accent-tint: #FBE9E9; --liturgical-accent-deep: #8B1A1A; --liturgical-season: "Pentecost"; }
 
 /* ----- Body + page chrome ----- */
@@ -112,33 +116,65 @@ body {
 
 .masthead {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 0.3in;
+  gap: 0.2in;
   padding-bottom: 0;
 }
-.masthead__lockup img {
+.masthead__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.22in;
+  min-width: 0;
+}
+/* Marks only, larger than the old lockup. The names beside them are live type. */
+.masthead__marks {
   display: block;
-  height: 0.9in;
+  height: 0.98in;
   width: auto;
+  flex: none;
+}
+.masthead__names {
+  display: flex;
+  flex-direction: column;
+  gap: 0.07in;
+  min-width: 0;
+}
+.masthead__parish { display: flex; flex-direction: column; line-height: 1.05; }
+.masthead__pname {
+  font-family: var(--font-display);
+  font-size: 17pt;
+  letter-spacing: 0.04em;
+  color: var(--color-navy);
+  white-space: nowrap;
+}
+.masthead__pcity {
+  font-family: var(--font-sans);
+  font-size: 7.5pt;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 700;
+  margin-top: 0.015in;
 }
 .masthead__date {
   text-align: right;
   display: flex;
   flex-direction: column;
   gap: 1pt;
+  max-width: 2.2in;
 }
 .masthead__sunday {
   font-family: var(--font-display);
-  font-size: 13pt;
-  letter-spacing: 0.06em;
+  font-size: 12.5pt;
+  letter-spacing: 0.05em;
   color: var(--color-navy);
-  line-height: 1.1;
+  line-height: 1.12;
 }
 .masthead__day {
   font-family: var(--font-sans);
-  font-size: 9pt;
-  letter-spacing: 0.18em;
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--liturgical-accent);
   font-weight: 600;
@@ -151,7 +187,7 @@ body {
 
 /* ----- Hero ----- */
 .hero {
-  flex: 0 0 3.0in;
+  flex: 0 0 2.6in;
   position: relative;
   margin-bottom: 0.20in;
 }
@@ -187,8 +223,8 @@ body {
 .hero__quote {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 30pt;
-  line-height: 1.18;
+  font-size: 22pt;
+  line-height: 1.2;
   color: var(--color-gold);
   max-width: 5.6in;
   margin: 0 0 0.24in;
@@ -482,8 +518,8 @@ body {
 /* Saint of the Week */
 .feature__variant[data-variant="saint"] .feature__layout {
   display: grid;
-  grid-template-columns: 1.6in 1fr;
-  gap: 0.24in;
+  grid-template-columns: 1.4in 1fr;
+  gap: 0.2in;
   align-items: start;
 }
 .feature__saint-figure {
@@ -502,7 +538,10 @@ body {
   padding: 0.1in;
 }
 .feature__saint-figure { position: relative; }
-.feature__saint-figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* The one saint-image treatment: every picture is cropped to the same frame and warmed and
+   softened slightly, so a museum scan or an icon reads as part of the page. */
+.feature__saint-figure img { width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(0.18) saturate(0.88) contrast(0.96); }
+.feature__saint-figure[data-has-image] { border-color: var(--color-gold); }
 .feature__saint-figure[data-has-image] { padding: 0; }
 .feature__credit {
   position: absolute;
@@ -636,9 +675,10 @@ body {
    which is outside the agent's automation scope. CSS preserved here only as a
    historical note and removed from layout.) */
 
-/* Announcements */
+/* Announcements, by tier. Feature is the boxed secondary showcase. Standard items run
+   in two columns. Space-permitting items join the same grid when room is left. */
 .announcements {
-  margin: 0 0 0.24in;
+  margin: 0 0 0.12in;
 }
 .announcements__head {
   font-family: var(--font-sans);
@@ -647,73 +687,122 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   color: var(--liturgical-accent);
-  margin-bottom: 0.14in;
+  margin-bottom: 0.08in;
+}
+.announcement-feature {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.2in;
+  align-items: center;
+  border: 1pt solid var(--color-hairline);
+  border-left: 4pt solid var(--liturgical-accent);
+  background: rgba(196, 162, 76, 0.06);
+  padding: 0.1in 0.16in;
+  margin-bottom: 0.1in;
+}
+.announcement-feature:not(:has(.announcement-feature__qr:not(:empty))) { grid-template-columns: 1fr; }
+.announcement-feature__body { display: grid; gap: 0.03in; }
+.announcement-feature__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 7.5pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--liturgical-accent);
+}
+.announcement-feature__qr { width: 0.95in; height: 0.95in; padding: 0.04in; background: var(--color-warm-white); }
+.announcement-feature__qr:empty { display: none; }
+.announcement-feature__qr svg { width: 100%; height: 100%; display: block; }
+.announcements__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.3in;
+  align-items: start;
 }
 .announcement {
   display: grid;
-  gap: 0.04in;
-  padding: 0.10in 0;
+  gap: 0.03in;
+  padding: 0.07in 0;
   border-bottom: 1px solid var(--color-hairline);
 }
-.announcement:last-child { border-bottom: none; padding-bottom: 0.10in; }
 .announcement__title {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 11.5pt;
+  font-size: 11pt;
   color: var(--color-navy);
   line-height: 1.2;
 }
 .announcement__body {
   font-family: var(--font-sans);
-  font-size: 10pt;
-  line-height: 1.5;
+  font-size: 9.5pt;
+  line-height: 1.42;
   color: var(--color-charcoal);
 }
 .announcement__contact {
   font-family: var(--font-sans);
-  font-size: 9.5pt;
+  font-size: 9pt;
   color: var(--color-charcoal-light);
   font-style: italic;
 }
+/* Optional picture or QR on a Standard item */
+.announcement[data-has-media] { grid-template-columns: 1fr auto; column-gap: 0.12in; }
+.announcement[data-has-media] > .announcement__title,
+.announcement[data-has-media] > .announcement__body,
+.announcement[data-has-media] > .announcement__contact { grid-column: 1; }
+.announcement__media { grid-column: 2; grid-row: 1 / span 3; width: 0.7in; height: 0.7in; }
+.announcement__media svg, .announcement__media img { width: 100%; height: 100%; display: block; object-fit: cover; }
 
-/* =============================================================
-   OFFERTORY COLLECTION · prior week's giving panel (Page 3)
-   One number per parish, designated gifts listed beneath.
-   ============================================================= */
-.offertory {
-  margin: 0 0 0.22in;
-  border: 1pt solid var(--color-hairline);
-  background: var(--color-warm-white);
-  padding: 0.12in 0.18in;
-}
-.offertory__head {
+/* News · optional, two or three items in our own words */
+.news { margin: 0 0 0.12in; }
+.news__head {
   font-family: var(--font-sans);
   font-size: 10pt;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--liturgical-accent);
+  margin-bottom: 0.06in;
 }
-.offertory__period {
-  font-family: var(--font-sans);
-  font-size: 8.5pt;
-  color: var(--color-charcoal-light);
-  margin: 0.02in 0 0.08in;
-}
-.offertory__grid {
+.news__grid { display: grid; grid-template-columns: repeat(var(--news-cols, 2), 1fr); gap: 0.24in; align-items: start; }
+.news__item { display: grid; gap: 0.02in; padding: 0.04in 0; border-top: 1px solid var(--color-hairline); }
+.news__headline { font-family: var(--font-serif); font-weight: 700; font-size: 10.5pt; color: var(--color-navy); line-height: 1.2; }
+.news__summary { font-family: var(--font-sans); font-size: 9pt; line-height: 1.4; color: var(--color-charcoal); }
+.news__source { font-family: var(--font-sans); font-size: 8pt; color: var(--color-charcoal-light); font-style: italic; }
+
+/* =============================================================
+   OFFERTORY COLLECTION · prior week's giving, condensed (Page 3)
+   Required, not a focus: one line per parish, designated gifts in
+   small type under it. The Annual Catholic Appeal has its own block.
+   ============================================================= */
+.offertory {
+  margin: 0 0 0.12in;
+  border: 1pt solid var(--color-hairline);
+  padding: 0.07in 0.16in;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.18in;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.2in;
+  row-gap: 0.03in;
   align-items: baseline;
 }
-.offertory__cell {
-  display: flex;
-  flex-direction: column;
-  gap: 0.02in;
+.offertory__head {
+  font-family: var(--font-sans);
+  font-size: 9pt;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--liturgical-accent);
 }
+.offertory__grid {
+  display: flex;
+  gap: 0.2in;
+  align-items: baseline;
+  justify-content: flex-end;
+}
+.offertory__cell { display: flex; gap: 0.08in; align-items: baseline; white-space: nowrap; }
 .offertory__label {
   font-family: var(--font-sans);
-  font-size: 8pt;
+  font-size: 7.5pt;
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--color-charcoal-light);
@@ -721,62 +810,98 @@ body {
 }
 .offertory__amount {
   font-family: var(--font-serif);
-  font-size: 14pt;
+  font-size: 11.5pt;
   font-weight: 700;
   color: var(--color-navy);
   font-variant-numeric: tabular-nums;
-  line-height: 1.1;
 }
 .offertory__designated {
-  margin-top: 0.09in;
-  padding-top: 0.06in;
-  border-top: 1px solid var(--color-hairline);
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0.12in;
+  align-items: baseline;
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  color: var(--color-charcoal);
 }
 .offertory__designated-head {
-  font-family: var(--font-sans);
-  font-size: 8pt;
+  font-size: 7.5pt;
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--color-charcoal-light);
   font-weight: 600;
-  margin-bottom: 0.03in;
+  white-space: nowrap;
 }
 .offertory__designated-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-family: var(--font-sans);
-  font-size: 9pt;
-  color: var(--color-charcoal);
-}
-.offertory__designated-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.02in 0.18in;
-}
-.offertory__designated-list li {
   display: flex;
-  gap: 0.10in;
-  padding: 0.015in 0;
+  flex-wrap: wrap;
+  gap: 0.01in 0.2in;
 }
-.offertory__appeal {
-  margin-top: 0.08in;
-  padding-top: 0.06in;
-  border-top: 1px solid var(--color-hairline);
+.offertory__designated-list li { display: flex; gap: 0.08in; }
+.offertory__period { display: none; }
+
+/* Annual Catholic Appeal: enlarged, explainer on top, QR to the diocese's give page. */
+.appeal {
+  margin: 0 0 0.14in;
+  border: 1pt solid var(--color-hairline);
+  border-left: 4pt solid var(--color-gold);
+  padding: 0.12in 0.16in;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.2in;
+  align-items: center;
+  break-inside: avoid;
 }
-.offertory__appeal-grid {
+.appeal__head {
+  font-family: var(--font-sans);
+  font-size: 10pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--liturgical-accent);
+  margin-bottom: 0.04in;
+}
+.appeal__explainer {
+  margin: 0 0 0.08in;
+  font-family: var(--font-serif);
+  font-size: 9.5pt;
+  line-height: 1.38;
+  color: var(--color-charcoal);
+  text-wrap: pretty;
+}
+.appeal__explainer strong { color: var(--color-navy); }
+.appeal__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.18in;
+  border-top: 1px solid var(--color-hairline);
+  padding-top: 0.06in;
 }
-.offertory__appeal-cell { display: flex; flex-direction: column; gap: 0.01in; }
-.offertory__appeal-line {
+.appeal__cell { display: flex; flex-direction: column; gap: 0.01in; }
+.appeal__pending {
+  grid-column: 1 / -1;
   font-family: var(--font-sans);
   font-size: 9pt;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+.offertory__appeal-line {
+  font-family: var(--font-sans);
+  font-size: 9.5pt;
   color: var(--color-charcoal);
   font-variant-numeric: tabular-nums;
 }
 .offertory__appeal-line strong { color: var(--color-navy); }
+.appeal__qr {
+  width: 1.0in;
+  height: 1.0in;
+  padding: 0.04in;
+  background: var(--color-warm-white);
+}
+.appeal__qr svg { width: 100%; height: 100%; display: block; }
 .offertory__purpose { font-weight: 600; color: var(--color-navy); }
 .offertory__by { font-variant-numeric: tabular-nums; }
 
@@ -788,12 +913,15 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  /* Two columns, reading down: a full week of intentions stays short now that page 3
+     also carries the announcements, News and the Appeal. */
+  columns: 2;
+  column-gap: 0.3in;
 }
 .intentions__list li {
+  break-inside: avoid;
   display: grid;
-  grid-template-columns: 1.4in 1fr;
+  grid-template-columns: 1.25in 1fr;
   gap: 0.08in;
   padding: 0.04in 0;
   border-bottom: 1px solid var(--color-hairline);
@@ -823,17 +951,11 @@ body {
 
 /* This Week: intentions + calendar side by side */
 .this-week-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.30in;
-  margin: 0 0 0.16in;
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow: hidden;
-  align-content: start;
+  display: block;
+  margin: 0 0 0.14in;
+  flex: 0 0 auto;
 }
-.this-week-grid .intentions,
-.this-week-grid .upcoming { margin: 0; }
+.this-week-grid .intentions { margin: 0; }
 
 /* Mini calendar */
 .upcoming {
@@ -1205,21 +1327,23 @@ body {
 }
 .page-footer__parishes {
   font-family: var(--font-display);
-  font-size: 10pt;
+  font-size: 9pt;
+  white-space: nowrap;
   color: var(--color-navy);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
 }
 .page-footer__parishes .diamond {
   color: var(--color-gold);
-  margin: 0 0.18in;
-  font-size: 6.5pt;
+  margin: 0 0.08in;
+  font-size: 6pt;
 }
 .page-footer__meta {
   display: flex;
   gap: 0.22in;
   align-items: center;
 }
-.page-footer__url { color: var(--color-navy); font-weight: 600; }
+/* 9.5pt: the URL was 8pt, too small for print. Larger than the names beside it, so it reads first. */
+.page-footer__url { color: var(--color-navy); font-weight: 600; font-size: 9.5pt; letter-spacing: 0.02em; white-space: nowrap; }
 
 /* Children's Corner — in-flow bottom anchor on Page 4.
    margin-top: auto pushes it below the reference-grid; cannot overlap
@@ -1590,3 +1714,42 @@ body {
 .calendar__row--new td { font-weight: 600; }
 .calendar__row--new .calendar__tag { border-color: var(--color-gold); color: var(--color-navy); background: rgba(196, 162, 76, 0.25); }
 .calendar__row--changed .calendar__tag { border-style: dashed; }
+
+
+/* Page 4: events under the Mass times, and the diocese block above the parishes. */
+.ref-events {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.06in;
+  font-family: var(--font-sans);
+  font-size: 9.5pt;
+  color: var(--color-charcoal);
+}
+.ref-events td {
+  padding: 0.035in 0.1in 0.035in 0;
+  border-top: 1px solid var(--color-hairline);
+  vertical-align: baseline;
+}
+.ref-events td:first-child { font-weight: 600; color: var(--color-navy); white-space: nowrap; }
+.ref-events td:last-child { white-space: nowrap; color: var(--color-charcoal-light); }
+.diocese-block__name {
+  font-family: var(--font-display);
+  font-size: 13pt;
+  letter-spacing: 0.06em;
+  color: var(--color-navy);
+}
+.diocese-block p { font-size: 9.5pt; }
+.diocese-block__url { font-weight: 600; color: var(--color-navy); }
+
+/* Saint feature: a plain "learn more" address and the source credit */
+.feature__learn, .feature__source {
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  overflow-wrap: anywhere;
+  margin: 0.04in 0 0;
+  color: var(--color-charcoal);
+}
+.feature__learn { font-weight: 600; color: var(--color-navy); }
+.feature__source { font-size: 8pt; font-style: italic; color: var(--color-charcoal-light); }
+.feature__saint-side { min-width: 0; }
+.feature__saint-side .feature__learn { margin-top: 0.06in; }
