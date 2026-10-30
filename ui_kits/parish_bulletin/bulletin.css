@@ -69,7 +69,6 @@
 /* Rose: Gaudete (3rd Sunday of Advent). Set alongside season-advent, so it wins. A deeper rose
    than the vestment so white and gold text hold contrast on print. */
 .season-rose      { --liturgical-accent: #A23A69; --liturgical-accent-tint: #FBE9F0; --liturgical-accent-deep: #7A2650; --liturgical-season: "Advent"; }
-.season-rose .hero__quote { color: #F7E9BF; }
 .season-pentecost { --liturgical-accent: #C62828; --liturgical-accent-tint: #FBE9E9; --liturgical-accent-deep: #8B1A1A; --liturgical-season: "Pentecost"; }
 
 /* ----- Body + page chrome ----- */
@@ -187,7 +186,7 @@ body {
 
 /* ----- Hero ----- */
 .hero {
-  flex: 0 0 2.6in;
+  flex: 0 0 2.35in;
   position: relative;
   margin-bottom: 0.20in;
 }
@@ -201,8 +200,9 @@ body {
 .hero__variant[data-variant="scripture"] {
   width: 100%;
   height: 100%;
-  background: var(--liturgical-accent);
-  color: var(--color-warm-white);
+  /* 2026-10-30: Father asked for less ink. Light tint instead of a solid block, smaller type. */
+  background: color-mix(in srgb, var(--liturgical-accent) 13%, #fff); /* not -tint: the PDF forces that to white */
+  color: var(--liturgical-accent-deep);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -213,29 +213,29 @@ body {
 .hero__variant[data-variant="scripture"]::before {
   content: "✠";
   font-family: var(--font-serif);
-  font-size: 22pt;
-  color: var(--color-gold);
+  font-size: 16pt;
+  color: var(--liturgical-accent);
   display: block;
-  margin-bottom: 0.16in;
+  margin-bottom: 0.14in;
   line-height: 1;
   opacity: 0.95;
 }
 .hero__quote {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 22pt;
-  line-height: 1.2;
-  color: var(--color-gold);
+  font-size: 17pt;
+  line-height: 1.25;
+  color: var(--liturgical-accent-deep);
   max-width: 5.6in;
-  margin: 0 0 0.24in;
+  margin: 0 0 0.2in;
   font-weight: 400;
   letter-spacing: -0.005em;
 }
 .hero__quote-cite {
   font-family: var(--font-sans);
-  font-size: 10.5pt;
+  font-size: 10pt;
   letter-spacing: 0.28em;
-  color: var(--color-warm-white);
+  color: var(--liturgical-accent-deep);
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -325,6 +325,31 @@ body {
   padding-left: 0.18in;
   border-left: 2pt solid var(--liturgical-accent);
   line-height: 1.35;
+}
+
+/* ----- Notice (page 1, optional). Outline only, so it adds little ink. ----- */
+.notice {
+  border: 1pt solid var(--liturgical-accent);
+  border-left-width: 4pt;
+  padding: 0.09in 0.18in 0.1in;
+  margin: 0 0 0.16in;
+  background: var(--color-warm-white);
+}
+.notice__title {
+  font-family: var(--font-sans);
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--liturgical-accent-deep);
+  margin: 0 0 0.03in;
+}
+.notice__body {
+  font-family: var(--font-serif);
+  font-size: 10pt;
+  line-height: 1.35;
+  color: var(--color-charcoal);
+  margin: 0;
 }
 
 /* ----- One Thing CTA bar ----- */
