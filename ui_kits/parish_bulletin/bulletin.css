@@ -1148,6 +1148,10 @@ body {
 .ref-block--stacked dd { margin-bottom: 0.05in; }
 .ref-block__office { display: flex; flex-direction: column; gap: 0.01in; }
 .ref-block__office p { line-height: 1.4; }
+.councils { display: flex; flex-direction: column; gap: 0.08in; }
+.council__name { font-family: var(--font-sans); font-size: 10pt; font-weight: 600; color: var(--color-navy); }
+.council p { margin: 0; font-size: 9.5pt; line-height: 1.4; }
+.council__chair strong { font-weight: 600; color: var(--color-navy); margin-right: 0.05in; }
 .ref-block__office strong { font-weight: 600; color: var(--color-navy); }
 .ref-block.span-2 ul {
   display: grid;
