@@ -178,10 +178,11 @@ body {
   color: var(--liturgical-accent);
   font-weight: 600;
 }
+/* Equal space above and below the rule: logo to rule, rule to scripture card (Derek, 2026-11-02). */
 .masthead-rule {
   height: 2pt;
   background: var(--liturgical-accent);
-  margin: 0.03in 0 0.10in;
+  margin: 0.065in 0 0.065in;
 }
 
 /* ----- Hero ----- */
@@ -1061,6 +1062,7 @@ body {
   border-left: 4pt solid var(--liturgical-accent);
   background: rgba(196, 162, 76, 0.06);
 }
+.house-card:not(:has(.house-card__qr)) { grid-template-columns: 1fr; }  /* short link: text only, no QR */
 .house-card__variant { display: none; }
 .house-card[data-active-variant="email-signup"]   .house-card__variant[data-variant="email-signup"],
 .house-card[data-active-variant="formed"]         .house-card__variant[data-variant="formed"],
@@ -1652,6 +1654,18 @@ body {
   margin-top: auto;
   padding-top: 0.06in;
   border-top: 1px solid var(--color-hairline);
+}
+
+/* Drawing space under a "Draw ..." prompt (Derek, 2026-11-02: there was no room to draw).
+   The prompt sits right under the story and the frame takes all the room left in the box. */
+.kids-story[data-space="draw"] { gap: 0.07in; padding: 0.12in 0.16in; }
+.kids-story[data-space="draw"] p { margin: 0; }
+.kids-story[data-space="draw"] .kids-story__prompt { margin-top: 0.02in; }
+.kids-story__draw {
+  flex: 1 1 auto;
+  min-height: 1.3in;
+  border: 1.5pt dotted var(--color-charcoal-light);
+  background: #fff;
 }
 
 /* =============================================================
