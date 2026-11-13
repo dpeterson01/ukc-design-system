@@ -51,6 +51,8 @@ The original AI/PDF source masters, print files, and large raster exports live i
 separate private initiative repo (`dpeterson01/ukc-data`) under `assets/brand/`.
 Pull from there when you need print masters or PNGs at specific pixel sizes.
 
+For slide decks, use the [presentation design review](docs/presentation-design-review.md) before presenting or sharing.
+
 ---
 
 ## Content fundamentals
