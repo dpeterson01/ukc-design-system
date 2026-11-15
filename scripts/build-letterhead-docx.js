@@ -70,7 +70,7 @@ function body(text, opts = {}) {
       new TextRun({
         text,
         font: "Book Antiqua",
-        size:  PT(11),  // 11pt
+        size:  22,  // 11pt
         color: CHARCOAL,
         ...opts,
       }),
@@ -94,7 +94,7 @@ const doc = new Document({
   styles: {
     default: {
       document: {
-        run: { font: "Book Antiqua", size: PT(11), color: CHARCOAL },
+        run: { font: "Book Antiqua", size: 22, color: CHARCOAL },
         paragraph: { spacing: { line: 276, lineRule: "auto" } },
       },
     },
@@ -161,7 +161,7 @@ const doc = new Document({
                 new TextRun({
                   text: "303 W. 2nd Street \u00b7 Cle Elum, WA 98922 \u00b7 (509) 674-2531 \u00b7 parish@ukccatholic.org \u00b7 ukccatholic.org",
                   font:  "Calibri",
-                  size:  PT(8),
+                  size:  16,
                   color: MIDGRAY,
                 }),
               ],
@@ -175,7 +175,7 @@ const doc = new Document({
                   text:   "Two places. One faith. One future in Christ.",
                   font:   "Book Antiqua",
                   italics: true,
-                  size:   PT(8),
+                  size:   16,
                   color:  GOLD,
                 }),
               ],

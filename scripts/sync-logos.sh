@@ -7,8 +7,6 @@
 #
 # The vault nests logos in subfolders (horizontal/, icon/, shield/, stacked/);
 # this repo keeps them flat because the UI kits and _ds_bundle.js reference flat
-# One mark is DS-native and NOT in the vault, so it is never touched:
-#   - parish-reverse_combined-shield.svg (preview card)
 # NOTE: parish-mono-white_three-mark.svg was DS-native until 2026-07-27, when the
 # three-mark-lockup was added to the vault. It has been deleted; use
 # parish-mono-white_three-mark-lockup.svg instead.
@@ -48,12 +46,10 @@ cp -f "$SRC/icon/parish-gold-screen-cross_cross.svg" "$DST/parish-gold-screen-cr
 cp -f "$SRC/icon/parish-gold-print-cross_cross.svg"  "$DST/parish-gold-print-cross.svg"
 copied=$((copied + 2))
 
-# Sanity check: the DS-native mark must survive a sync.
-for native in parish-reverse_combined-shield.svg; do
-  if [[ ! -f "$DST/$native" ]]; then
-    echo "warning: DS-native mark missing after sync: $native" >&2
-  fi
-done
+# Sanity check: the reverse combined shield should be present after syncing.
+if [[ ! -s "$DST/parish-reverse_combined-shield.svg" ]]; then
+  echo "warning: reverse combined shield missing after sync" >&2
+fi
 
 echo "synced $copied logo SVGs from $SRC"
 echo "review with: git -C \"$REPO_ROOT\" status assets/logos"
